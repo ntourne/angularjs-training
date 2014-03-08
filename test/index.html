@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
+    <script src="team.js"></script>
+</head>
+<body>
+
+    <div ng-controller="TeamController as teamC">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Country</td>
+                <td>Actions</td>
+            </tr>
+            <tr ng-repeat="team in teams">
+                <td>{{team.name}}</td>
+                <td>{{team.country}}</td>
+                <td><a href="" ng-click="removeTeam(team.name)">remove</a></td>
+            </tr>
+        </table>
+
+        <form ng-submit="addTeam()">
+            <input type="text" ng-model="name" placeholder="Name"/>
+            <input type="text" ng-model="country" placeholder="Country"/>
+            <input type="submit" value="Add team"/>
+        </form>
+
+        <input type="text" ng-model="nombreDelEquipo" />
+        <br/>
+        El equipo es {{nombreDelEquipo}}
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>
